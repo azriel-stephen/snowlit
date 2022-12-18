@@ -22,8 +22,8 @@ st.dataframe(fruits_to_show)
 
 # New Section to display fruityvice api resonse
 st.header('Fruityvice Fruit Advice!')
-fruit_name = "kiwi"
-fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_name}")
+fruit_choice = st.test_input('What fruit would youu like information about?', "kiwi")
+fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_choice}")
 # st.text(fruityvice_response.json())
 
 # take the json version of the response and normalize it
