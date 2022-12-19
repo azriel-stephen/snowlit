@@ -51,7 +51,7 @@ def get_fruit_load_list():
 if st.button('Get Fruit Load List'):
     conn = snowflake.connector.connect(**st.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
-    st.dataframe(my_data_row)
+    st.dataframe(my_data_rows)
 
 st.stop()
 # allow the end user to add a fruit to the list
