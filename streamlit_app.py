@@ -29,7 +29,7 @@ def get_fruityvice_data(choice):
   return fruityvice_normalized
 
 # New Section to display fruityvice api resonse
-st.header('Fruityvice Fruit Advice!')
+st.header('Fruityvice Fruit Advice from api!')
 try:
   fruit_choice = st.text_input('What fruit would you like information about?')
   if not fruit_choice:
