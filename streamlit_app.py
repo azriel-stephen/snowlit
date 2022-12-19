@@ -34,8 +34,11 @@ st.dataframe(fruityvice_normalized)
 
 conn = snowflake.connector.connect(**st.secrets["snowflake"])
 cursor = conn.cursor()
+
 # cursor.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-cursor.execute("select CURRENT_DATABASE(), CURRENT_CLIENT(), CURRENT_SCHEMA();")
-my_data_row = cursor.fetchone()
-st.text("Hello from Snowflake:")
-st.text(my_data_row)
+cursor.execute("select * from fruit_load_list")
+# my_data_row = cursor.fetchone()
+my_data_row = cursor.fetchall()
+
+st.header("The fruit load list contains:")
+st.dataframe(my_data_row)
