@@ -61,7 +61,7 @@ def insert_row_snowflake(fruit):
   with conn.cursor() as cur:
 #     cur.execute("insert into fruit_load_list values ('"+ fruit +"')")
     cur.execute(f"insert into fruit_load_list values ({fruit})")
-    return "Thanks for adding"+ fruit
+    return "Thanks for adding "+ fruit
   
 # allow the end user to add a fruit to the list
 add_my_fruit = st.text_input('What fruit would you like to add?')
